@@ -1,19 +1,28 @@
 <section id="login">
     <div class="container">
-        <marquee behavior="scroll" direction="left">{{ msg }}</marquee>
+        <div class="alert alert-success fade show" ng-show="successStatus">
+            <button type="button" class="close" ng-click="toggleSuccessStatus()">&times;</button>
+            <strong>Success!</strong> <span ng-bind="successMsg"></span>
+        </div>
+        <div class="alert alert-danger fade show"  ng-show="errorStatus">
+            <button type="button" class="close" ng-click="toggleErrorStatus()">&times;</button>
+            <strong>Error</strong> <span ng-bind="errorMsg"></span>
+        </div>
         <div class="row d-flex flex-column align-items-center">
             <div class="col-lg-8 col-md-12">
-                <form name="loginForm" method="POST" ng-submit="login()" role="form">
-                    <div class="form-group">
+                <form name="form" method="POST" ng-submit="login()" role="form">
+                    <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
                         <label for="name" class="control-label">Name:</label>
                         <input type="text" class="form-control" ng-model="username" name="username" placeholder="Enter your Username here" required>
+                        <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block text-danger">Username is required</span>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
                         <label for="password" class="control-label">Password:</label>
                         <input type="password" class="form-control" ng-model="password" name="password" placeholder="Enter your password here" required>
+                        <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block text-danger">Password is required</span>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="submit" class="btn btn-primary btn-block">
+                        <input type="submit" ng-disabled="form.$invalid" value="submit" class="btn btn-primary btn-block">
                     </div>
                 </form>
             </div>
