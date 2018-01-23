@@ -1,91 +1,16 @@
-#loginBody {
-    background-image: url("../img/login-bg.jpg");
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    min-height: 90vh;
-}
-
-#loginCard {
-    opacity: 0.7;
-}
-
-#loginCard label {
+.label-control {
     font-weight: bold;
+    font-size: 1.6rem;
 }
 
-a.links {
-    text-decoration: none;
-    color: inherit;
+.min-h-100 {
+    min-height: 100vh;
 }
 
-.side-dashboard-nav {
-    min-height: 85vh !important;
+.mx-auto {
+    margin: auto 20% auto 20%;
 }
 
-.side-dashboard-nav > li {
-    padding: 10px;
-    padding-bottom: 5px;
-    background-color: #f8f9fa;
-    border: none;
-    border-bottom: 1px solid rgba(0,0,0,.05);
-    border-top: 1px solid rgba(0,0,0,.05);
+.primary-color {
+    background-color: #283593;
 }
-
-.side-dashboard-nav > li.active {
-    text-align: center;
-}
-
-.side-dashboard-nav > li:first-child {
-    border: none;
-}
-
-/* Home page */
-#brand {
-    height: 70vh;
-    background-image: url('../img/brand.jpg');
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-size: cover;
-    z-index: -2;            
-}
-
-#brand > div {
-    height: 70vh;
-}
-
-#brand ul > li {
-    display: inline-block;
-    padding: 1rem;
-} 
-
-#brand ul > li > a {
-    text-decoration: none;
-} 
-
-#showcase {
-    background-image: url('../img/showcase.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    opacity: 0.8;
-}
-
-.min-60 {
-    min-height: 60vh;
-}
-
-#about-incridea {
-    background-image: url('../img/about-incridea.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    background-attachment: fixed;
-    color: white;
-}
-
-/* Home style ends */
