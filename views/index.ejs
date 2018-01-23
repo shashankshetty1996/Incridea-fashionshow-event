@@ -7,10 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>INCRIDEA 2K18 | Events Registration</title>
 
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> -->
+
+    <!-- Material ICON -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
     <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="/css/boostrap.pm.css">
     <link rel="stylesheet" href="/css/style.css">
 
     <!-- Angular Files -->
@@ -19,13 +29,64 @@
 </head>
 
 <body>
+    <div class="navbar-fixed">
+        <nav class="primary-color">
+            <div class="nav-wrapper container">
+                <a href="#" class="brand-logo">Incridea</a>
+                <ul id="nav-mobile" class="hide-on-med-and-down right">
+                    <li><a href="#!hackridea">Hackridea</a></li>
+                    <li><a href="#!fashion">Fashion Show</a></li>
+                    <li><a href="#!bob">Battle of Bands</a></li>
+                    <li><a href="#!login">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hide-on-med-and-up show-on-medium-and-down">
+            <div class="fixed-action-btn">
+                <a class="btn-floating btn-large primary-color">
+                    <i class="large material-icons">menu</i>
+                </a>
+                <ul>
+                    <li>
+                        <a href="#" class="btn-floating blue tooltipped" data-position="left" data-delay="50" data-tooltip="Home">
+                            <i class="material-icons">home</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!hackridea" class="btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Hackridea">
+                            <i class="material-icons">laptop</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!fashion" class="btn-floating yellow darken-1 tooltipped" data-position="left" data-delay="50" data-tooltip="Fashion Show">
+                            <i class="material-icons">wc</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!bob" class="btn-floating green tooltipped" data-position="left" data-delay="50" data-tooltip="Battle of the Bands">
+                            <i class="material-icons">library_music</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#!login" class="btn-floating blue tooltipped" data-position="left" data-delay="50" data-tooltip="Logout">
+                            <i class="material-icons">lock_open</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <!-- Angular dynamic render placeholder -->
     <ng-view></ng-view>
 
     <!-- Bootstrap JS -->
-    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+        <script src="js/bootstrap.min.js"></script> -->
+    <!-- Materialize JS -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
     <!-- Angular files -->
     <script src="js/app.js"></script>
@@ -40,6 +101,12 @@
     <!-- Angular Services -->
     <script src="js/service/authentication.service.js"></script>
     <script src="js/service/user.service.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.tooltipped').tooltip();
+        });
+    </script>
 </body>
 
 </html>
