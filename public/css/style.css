@@ -1,16 +1,27 @@
 .label-control {
-    font-weight: bold;
-    font-size: 1.6rem;
+  font-weight: bold;
+  font-size: 1.6rem;
 }
 
 .min-h-100 {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 .mx-auto {
-    margin: auto 20% auto 20%;
+  margin: auto 20% auto 20%;
 }
 
 .primary-color {
-    background-color: #283593;
+  background-color: #283593;
 }
+
+#hackridea .parallax-container {
+    background-image: url('../img/hackridea-header.png');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+/* 
+.header-img {
+} */
