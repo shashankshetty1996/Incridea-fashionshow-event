@@ -15,4 +15,8 @@ function fashionController($scope, DashboardService) {
             $scope.ParticipantsList = response.message; 
         }
     });
+
+    $scope.printMe = function() {
+        window.print();
+    }
 }

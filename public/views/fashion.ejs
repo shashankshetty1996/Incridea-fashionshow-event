@@ -5,9 +5,9 @@
             <h4 class="center-align">Team ID {{ teamID }}</h4>
         </div>
         <div class="divider"></div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col m6 s12 my-2" ng-repeat="x in ParticipantsList">
-                <div class="card pink darken-1 z-depth-3 white-text">
+                <div class="card secondary-color z-depth-3 white-text">
                     <div class="card-content">
                         <span class="card-title center-align">Participant {{ $index + 1 }} details</span>
                         <hr>
@@ -16,6 +16,27 @@
                     </div>
                 </div>
             </div>
+        </div> -->
+        <table class="bordered highlight responsive-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>PID</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+                <tr ng-repeat="x in ParticipantsList">
+                    <td>{{ x.name }}</td>
+                    <td>{{ x.pid }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="row my-2">
+            <button class="btn" ng-click="printMe()">
+                Print 
+            </button>
         </div>
     </div>
 </section>
