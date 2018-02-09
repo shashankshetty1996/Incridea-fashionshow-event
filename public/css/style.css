@@ -56,8 +56,13 @@
   align-items: flex-end;
 }
 
+.social-text {
+  font-size: 1rem;
+}
+
 #footer-details {
   margin: 0;
+  font-size: 1rem;
 }
 
 .my-2 {
