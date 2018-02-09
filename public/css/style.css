@@ -12,12 +12,22 @@
 }
 
 .primary-color {
-  background-color: #283593;
+  /* background-color: #283593; */
+  background-color: gold;
 }
 
 .secondary-color {
   background-color: #F50057;
   /* background-color: #FF4081; */
+}
+
+.btn {
+  background-color: #283593;
+  color: white;
+}
+
+.brand-logo {
+  font-weight: bolder;
 }
 
 .parallax-container .parallax {
@@ -44,6 +54,12 @@
   width: 100%;
 }
 
+#incridea-logo {
+  height: 24vh;
+  width: 7vw;
+  margin: 30px;
+}
+
 .center {
   display: flex;
   justify-content: center;
@@ -58,6 +74,12 @@
 
 .social-text {
   font-size: 1rem;
+  font-weight: bold;
+  color: gold;
+}
+
+.fa {
+  color: gold;
 }
 
 #footer-details {
@@ -77,5 +99,9 @@
 @media(max-width: 600px) {
   .mx-auto {
     margin: auto 5% auto 5%;    
+  }
+
+  #incridea-logo {
+    height: 18vh;
   }
 }
