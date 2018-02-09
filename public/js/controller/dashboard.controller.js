@@ -32,7 +32,7 @@ function dashboardController($scope, $location, DashboardService) {
             if(response.success) {
                 // Get Team ID
                 let teamID = response.message.team_id;
-                DashboardService.addParticipants(teamID, teamDetails, function(resp) {
+                DashboardService.addParticipants(teamID, noparticipant, teamDetails, function(resp) {
                     if(resp.success) {
                         // successful
                         localStorage.setItem("team-id", teamID);

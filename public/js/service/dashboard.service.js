@@ -25,8 +25,8 @@ function DashboardService(DetailsService, ParticipantsService) {
             });
     }
 
-    function addParticipants(teamID, teamDetails, callback) {
-        ParticipantsService.addParticipants(teamID, teamDetails)
+    function addParticipants(teamID, noparticipant, teamDetails, callback) {
+        ParticipantsService.addParticipants(teamID, noparticipant, teamDetails)
             .then(function(res) {
                 response = {success: true, message: res};
                 callback(response);

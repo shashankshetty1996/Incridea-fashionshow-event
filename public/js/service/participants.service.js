@@ -12,8 +12,8 @@ function ParticipantsService($http) {
     
     return service;
 
-    function addParticipants(teamID, teamDetails) {
-        let data = {teamID: teamID, teamDetails: teamDetails};
+    function addParticipants(teamID, noparticipant, teamDetails) {
+        let data = {teamID: teamID, noparticipant: noparticipant, teamDetails: teamDetails};
         return $http.post('/api/participants', data).then(handleSuccess, handleError("Error: in getting details"));
     }
 

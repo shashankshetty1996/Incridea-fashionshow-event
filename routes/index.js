@@ -41,8 +41,9 @@ router.post('/participants', verifyToken, (req, res) => {
         }
         let body = req.body;
         let team_id = body.teamID;
+        let noparticipant = body.noparticipant;
         let teamDetails = body.teamDetails;
-        participants.addParticipants(team_id, teamDetails, (err, result) => {
+        participants.addParticipants(team_id, noparticipant, teamDetails, (err, result) => {
             if(err) {
                 res.sendStatus(403);
             }
