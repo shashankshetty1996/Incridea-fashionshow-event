@@ -3,8 +3,8 @@
   font-size: 1.6rem;
 }
 
-.min-h-100 {
-  min-height: 100vh !important;
+.min-h {
+  min-height: 80vh !important;
 }
 
 .mx-auto {
@@ -13,6 +13,11 @@
 
 .primary-color {
   background-color: #283593;
+}
+
+.secondary-color {
+  background-color: #F50057;
+  /* background-color: #FF4081; */
 }
 
 .parallax-container .parallax {
