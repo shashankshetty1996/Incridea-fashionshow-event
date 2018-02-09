@@ -31,22 +31,27 @@
     <script src="js/angular-route.min.js"></script>
 </head>
 
-<body>
+<body ng-controller="rootController">
     <div class="navbar-fixed">
         <nav class="primary-color">
             <div class="nav-wrapper container">
                 <a href="#" class="brand-logo">Incridea</a>
-                <ul id="nav-mobile" class="hide-on-med-and-down right">
+                <ul id="nav-mobile" class="hide-on-med-and-down right" ng-show="loggedIn">
                     <li><a href="#!login">Logout</a></li>
                 </ul>
             </div>
         </nav>
         <div class="hide-on-med-and-up show-on-medium-and-down">
-            <div class="fixed-action-btn">
+            <div class="fixed-action-btn" ng-show="loggedIn">
                 <a class="btn-floating btn-large primary-color">
                     <i class="large material-icons">menu</i>
                 </a>
                 <ul>
+                    <li>
+                        <a href="#!" class="btn-floating green tooltipped" data-position="left" data-delay="50" data-tooltip="Home">
+                            <i class="material-icons">home</i>
+                        </a>
+                    </li>
                     <li>
                         <a href="#!login" class="btn-floating blue tooltipped" data-position="left" data-delay="50" data-tooltip="Logout">
                             <i class="material-icons">lock_open</i>
@@ -72,6 +77,7 @@
     <script src="js/app.js"></script>
 
     <!-- Angular controllers -->
+    <script src="js/controller/root.controller.js"></script>
     <script src="js/controller/login.controller.js"></script>
     <script src="js/controller/dashboard.controller.js"></script>
     <script src="js/controller/fashion.controller.js"></script>

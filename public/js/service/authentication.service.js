@@ -11,6 +11,7 @@ function AuthenticationService($http, $rootScope, UserService) {
     service.login = login;
     service.setCredentialToken = setCredentialToken;
     service.clearCredentialToken = clearCredentialToken;
+    service.getLoginStatus = getLoginStatus;
     
     return service;
 
@@ -48,5 +49,13 @@ function AuthenticationService($http, $rootScope, UserService) {
         localStorage.removeItem('globals');
         // removing http header
         $http.defaults.headers.common.Authorization = 'Bearer';
+    }
+
+    function getLoginStatus() {
+        if ($rootScope.globals.currentUser) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
