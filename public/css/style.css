@@ -50,6 +50,16 @@
   align-items: center;
 }
 
+.social {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+#footer-details {
+  margin: 0;
+}
+
 .my-2 {
   margin-top: 2rem;
   margin-bottom: 2rem; 
