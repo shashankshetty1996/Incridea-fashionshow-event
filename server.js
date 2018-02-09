@@ -28,15 +28,26 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 // MySQL connection configuration
 // to make connection object access global through out the node application
 app.use((req, res, next) => {
-    global.con = mysql.createConnection({
-        host : "127.0.0.1" || "localhost",
-        user : process.env.DB_USER || "root",
-        password : process.env.DB_PASSWORD || '',
-        database : process.env.DB_NAME || "fs-incridea"
-    });
-    con.connect();
+    function handle() {
+      var connection = mysql.createConnection({
+        host: "127.0.0.1" || "localhost",
+        user: process.env.DB_USER || "root",
+        password: process.env.DB_PASSWORD || "",
+        database: process.env.DB_NAME || "fs-incridea"
+      });
+      connection.connect(function(err) {
+        if (err) handle();
+      });
+      connection.on("error", function(err) {
+        if (err.code == "PROTOCOL_CONNECTION_LOST") {
+          handle();
+        }
+      });
+      global.con = connection;
+    }
+    handle();
     next();
-});
+  });
 
 // Adding routes to the express app
 app.use('/api', api);
