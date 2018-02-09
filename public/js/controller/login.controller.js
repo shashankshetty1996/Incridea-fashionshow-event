@@ -22,11 +22,11 @@ function loginController($scope, $location, AuthenticationService) {
 
         AuthenticationService.login(username, password, function(response) {
             if(response.success) {
-                $scope.toggleSuccessStatus();
                 $scope.clearField();
                 $location.path('/');
-            } else {
-                $scope.toggleErrorStatus();
+            } else {              
+                let toastContent = '<span class="flow-text">Invaild Credentials</span>';  
+                Materialize.toast(toastContent, 3000);
             }
         });
     }
@@ -35,14 +35,5 @@ function loginController($scope, $location, AuthenticationService) {
     $scope.clearField = function() {
         $scope.username = "";
         $scope.password = "";
-    }
-
-    // toggle status
-    $scope.toggleSuccessStatus = function() {
-        $scope.successStatus = !$scope.successStatus;
-    }
-
-    $scope.toggleErrorStatus = function() {
-        $scope.errorStatus = !$scope.errorStatus;
     }
 }
