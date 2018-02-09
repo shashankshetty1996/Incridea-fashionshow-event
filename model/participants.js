@@ -19,14 +19,14 @@ module.exports.addParticipants = (teamID, noparticipant, teamDetails, callback) 
                 // To assign PID //
             */
             let i, j = 0;
-            for(i = 0; i < noparticipant - 1; i++) {
+            for(i = 1; i < noparticipant; i++) {
                 let pid = teamID + "-" + ("0" + String(i)).slice(-2);
-                let query = "UPDATE participant SET pid = " + mysql.escape(pid) + " WHERE name = " + mysql.escape(teamDetails[j].name) + " AND usn = " + mysql.escape(teamDetails[j].usn) + " AND phone = " + mysql.escape(teamDetails[j].phone) + " AND email = " + mysql.escape(teamDetails[j].email) + " AND team_id = " + mysql.escape(teamID) + " AND id = " + i; 
+                let query = "UPDATE participant SET pid = " + mysql.escape(pid) + " WHERE name = " + mysql.escape(teamDetails[j].name) + " AND usn = " + mysql.escape(teamDetails[j].usn) + " AND phone = " + mysql.escape(teamDetails[j].phone) + " AND email = " + mysql.escape(teamDetails[j].email) + " AND team_id = " + mysql.escape(teamID); 
                 j++;
                 global.con.query(query);
             }
             let pid = teamID + "-" + ("0" + String(i)).slice(-2);
-            let query = "UPDATE participant SET pid = " + mysql.escape(pid) + " WHERE name = " + mysql.escape(teamDetails[j].name) + " AND usn = " + mysql.escape(teamDetails[j].usn) + " AND phone = " + mysql.escape(teamDetails[j].phone) + " AND email = " + mysql.escape(teamDetails[j].email) + " AND team_id = " + mysql.escape(teamID) + " AND id = " + i;
+            let query = "UPDATE participant SET pid = " + mysql.escape(pid) + " WHERE name = " + mysql.escape(teamDetails[j].name) + " AND usn = " + mysql.escape(teamDetails[j].usn) + " AND phone = " + mysql.escape(teamDetails[j].phone) + " AND email = " + mysql.escape(teamDetails[j].email) + " AND team_id = " + mysql.escape(teamID);
             global.con.query(query, callback); 
         });
     } catch (error) {
