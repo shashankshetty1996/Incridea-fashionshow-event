@@ -37,9 +37,6 @@
             <div class="nav-wrapper container">
                 <a href="#" class="brand-logo">Incridea</a>
                 <ul id="nav-mobile" class="hide-on-med-and-down right">
-                    <li><a href="#!hackridea">Hackridea</a></li>
-                    <li><a href="#!fashion">Fashion Show</a></li>
-                    <li><a href="#!bob">Battle of Bands</a></li>
                     <li><a href="#!login">Logout</a></li>
                 </ul>
             </div>
@@ -50,26 +47,6 @@
                     <i class="large material-icons">menu</i>
                 </a>
                 <ul>
-                    <li>
-                        <a href="#" class="btn-floating blue tooltipped" data-position="left" data-delay="50" data-tooltip="Home">
-                            <i class="material-icons">home</i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#!hackridea" class="btn-floating red tooltipped" data-position="left" data-delay="50" data-tooltip="Hackridea">
-                            <i class="material-icons">laptop</i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#!fashion" class="btn-floating yellow darken-1 tooltipped" data-position="left" data-delay="50" data-tooltip="Fashion Show">
-                            <i class="material-icons">wc</i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#!bob" class="btn-floating green tooltipped" data-position="left" data-delay="50" data-tooltip="Battle of the Bands">
-                            <i class="material-icons">library_music</i>
-                        </a>
-                    </li>
                     <li>
                         <a href="#!login" class="btn-floating blue tooltipped" data-position="left" data-delay="50" data-tooltip="Logout">
                             <i class="material-icons">lock_open</i>
@@ -97,13 +74,14 @@
     <!-- Angular controllers -->
     <script src="js/controller/login.controller.js"></script>
     <script src="js/controller/dashboard.controller.js"></script>
-    <script src="js/controller/hackridea.controller.js"></script>
     <script src="js/controller/fashion.controller.js"></script>
-    <script src="js/controller/bob.controller.js"></script>
 
     <!-- Angular Services -->
     <script src="js/service/authentication.service.js"></script>
     <script src="js/service/user.service.js"></script>
+    <script src="js/service/dashboard.service.js"></script>
+    <script src="js/service/details.service.js"></script>
+    <script src="js/service/participants.service.js"></script>
 
     <script>
         $(document).ready(function () {

@@ -32,7 +32,7 @@ app.use((req, res, next) => {
         host : "127.0.0.1" || "localhost",
         user : process.env.DB_USER || "root",
         password : process.env.DB_PASSWORD || '',
-        database : process.env.DB_NAME || "incridea"
+        database : process.env.DB_NAME || "fs-incridea"
     });
     con.connect();
     next();

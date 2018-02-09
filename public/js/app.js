@@ -10,17 +10,9 @@ app.config(function ($routeProvider) {
             templateUrl: 'views/login.ejs',
             controller: 'loginController'
         })
-        .when('/hackridea', {
-            templateUrl: 'views/hackridea.ejs',
-            controller: 'hackrideaController'
-        })
         .when('/fashion', {
             templateUrl: 'views/fashion.ejs',
             controller: 'fashionController'
-        })
-        .when('/bob', {
-            templateUrl: 'views/bob.ejs',
-            controller: 'bobController'
         })
         .otherwise({
             redirectTo: '/'

@@ -1,4 +1,4 @@
-<section id="dashboard" class="mt-4">
+<!-- <section id="dashboard" class="mt-4">
     <div class="container">
         <div class="row">
             <div id="about-hackridea" class="col offset-l3 l9 s12 animated slideInRight">
@@ -35,5 +35,68 @@
                 </div>
             </div>
         </div>
+    </div>
+</section> -->
+
+<section id="fashion-show">
+    <div class="container min-h-100 center">
+        <form name="form" ng-submit="submit()">
+            <div class="card">
+                <div class="card-content">
+                    <div class="row">
+                        <div class="input-field col s12" ng-class="{ 'has-error': form.college.$dirty && form.college.$error.required }">
+                            <i class="material-icons prefix">account_balance</i>
+                            <input type="text" name="college" ng-model="collegename" class="validate" required>
+                            <label data-error="College Name Required">College Name</label>
+                        </div>
+                        <div class="input-field col s12" ng-class="{ 'has-error': form.teamname.$dirty && form.teamname.$error.required }">
+                            <i class="material-icons prefix">assignment_ind</i>
+                            <input type="text" name="teamname" class="validate" ng-model="teamname" maxlength="50" required>
+                            <label data-error="Team Name Invalid">Team Name</label>
+                        </div>
+                        <div class="input-field col s12" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+                            <i class="material-icons prefix">description</i>
+                            <input type="number" class="validate" max="12" ng-model="noparticipant" ng-change="participantCounter()" required>
+                            <label data-error="Maximum limit is 12">Number of Participant</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- participant card -->
+            <div class="card my-2" ng-repeat="x in cardcount">
+                <div class="card-content">
+                    <div class="row">
+                        <h1 class="left-align flow-text pl-1">Participant {{ x.id }} Details</h1>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input type="text" ng-model="x.name" class="validate" required>
+                            <label data-error="Participants Name Required">Participants Name</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">card_membership</i>                            
+                            <input type="text" ng-model="x.usn" class="validate" required>
+                            <label data-error="Participants USN Required">Participants USN</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">phone_iphone</i>
+                            <input type="text" ng-model="x.phone" class="validate" required>
+                            <label data-error="Phone Number Required">Participants Phone</label>
+                        </div>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">mail_outline</i>
+                            <input type="email" ng-model="x.email" class="validate" required>
+                            <label data-error="Invalid Email ID">Participants Email ID</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col my-2">
+                <button class="btn waves-effect waves-light input-field" ng-disabled="form.$invalid" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </form>
     </div>
 </section>

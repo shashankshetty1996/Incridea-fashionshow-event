@@ -11,16 +11,19 @@ router.post('/', (req, res) => {
     user.login(username, password, (err, result) => {
         if(err) {
             res.sendStatus(403);
-        } else if(result != '') { 
-            // user found in the database  
-            let user = result[0];
-            jwt.sign({user:user.username}, 'incridea', (err, token) => {
-                result[0].token = token;
-                result = result[0];
-                res.json(result);
-            });
+        } else if(result !== '') { 
+            // user found in the database 
+            try {
+                jwt.sign({user:result[0].username}, 'incridea', (err, token) => {
+                    result[0].token = token;
+                    result = result[0];
+                    res.json(result);
+                });
+            } catch (error) {
+                res.json({username: '', password: ''});                
+            } 
         } else {
-            res.json({username: '', password: '', flag: 0 });
+            res.json({username: '', password: ''});
         }
     });
 });

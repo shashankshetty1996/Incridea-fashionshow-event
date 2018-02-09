@@ -1,5 +1,21 @@
 <section id="fashion">
     <div class="container">
-        <h1 class="display-4">{{msg}}</h1>
+        <!-- cards -->
+        <div class="section">
+            <h4 class="center-align">Team ID {{ teamID }}</h4>
+        </div>
+        <div class="divider"></div>
+        <div class="row">
+            <div class="col m6 s12 my-2" ng-repeat="x in ParticipantsList">
+                <div class="card pink darken-1 z-depth-3 white-text">
+                    <div class="card-content">
+                        <span class="card-title center-align">Participant {{ $index + 1 }} details</span>
+                        <hr>
+                        <h1 class="flow-text">Name: <span ng-bind="x.name"></span></h1>
+                        <h1 class="flow-text">PID: <span ng-bind="x.pid"></span></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
