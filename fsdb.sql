@@ -5,12 +5,17 @@ SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
 SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
+DROP DATABASE IF EXISTS incridea;
+
+CREATE DATABASE incridea;
+use incridea;
+
 DROP TABLE IF EXISTS `details`;
 CREATE TABLE `details` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `college_name` varchar(255) NOT NULL,
   `team_name` varchar(255) NOT NULL,
-  `team_id` varchar(255) NOT NULL,
+  `team_id` varchar(255),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
