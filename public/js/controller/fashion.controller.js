@@ -16,7 +16,7 @@ function fashionController($scope, DashboardService) {
         }
     });
 
-    $scope.printMe = function() {
-        window.print();
-    }
+    // $scope.printMe = function() {
+    //     location.href="report";
+    // }
 }
