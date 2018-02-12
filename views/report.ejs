@@ -25,7 +25,8 @@
 <body>
     <img class="letter-head" src="img/letter-head.png">
     <div class="container" ng-controller="reportController">
-        <table class="bordered highlight responsive-table">
+         <h4 class="center-align">Team ID {{ teamID }}</h4>
+	 <table class="bordered highlight responsive-table">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -43,6 +44,51 @@
 
         <button class="btn my-2" ng-click="print()">Print Report</button>
     </div>
+    <footer id="footer" class="black">
+        <div class="container">
+            <a href="#" class="center">
+                <img src="img/Incridea-2018-logo.png" alt="Incridea-2018" id="incridea-logo">
+            </a>
+            <div class="social">
+                <a href="https://www.facebook.com/incrideanitte/">
+                    <i class="fa fa-facebook fa-2x"></i>
+                    <span class="social-text">Facebook</span>
+                </a>
+                <a href="https://www.instagram.com/incridea/">
+                    <i class="fa fa-instagram fa-2x"></i>
+                    <span class="social-text">Instagram</span>
+                </a>
+                <a href="https://www.youtube.com/channel/UCN3YgMpPmr2Dw7qnM-w6Z6g">
+                    <i class="fa fa-youtube fa-2x"></i>
+                    <span class="social-text">YouTube</span>
+                </a>
+            </div>
+            <br>
+        </div>
+        <div class="section white">
+            <div class="container">
+                <div class="row">
+                    <div class="col m7 s12">
+                        <div class="center">
+                            <img src="img/alpha.jpg" style="width: 70%;">
+                        </div>
+                    </div>
+                    <div class="col m5 s12 full-size">
+                        <center>
+                            <br><br><br>
+                            <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/">
+                                <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nd/4.0/88x31.png">
+                            </a>
+                            <p style="color:#000;font-weight:500;">This work is licensed under a
+                                <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/" style="color:#fb1b35">Creative Commons Attribution-NoDerivatives 4.0 International License</a>
+                            </p>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p id="footer-details" class="flow-text white-text center">Designed By Shashank Shetty</p>
+    </footer>    
 
     <!-- Materialize JS -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>

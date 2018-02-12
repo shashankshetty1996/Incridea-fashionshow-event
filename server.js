@@ -1,3 +1,4 @@
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
@@ -12,7 +13,7 @@ let user = require('./routes/user');
 const app = express();
 
 // Defining node port.
-const port = process.env.port || 4000;
+const port = 5000
 
 // View Engine
 app.set('views', path.join(__dirname, 'views'));
@@ -27,34 +28,34 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 
 // MySQL connection configuration
 // to make connection object access global through out the node application
+
 app.use((req, res, next) => {
     function handle() {
       var connection = mysql.createConnection({
         host: "127.0.0.1" || "localhost",
         user: process.env.DB_USER || "root",
-        password: process.env.DB_PASSWORD || "",
-        database: process.env.DB_NAME || "fs-incridea"
+        password: process.env.DB_PASSWORD || "root",
+        database: process.env.DB_NAME || "incridea"
       });
       connection.connect(function(err) {
-        if (err) handle();
+        if (!err) {
+		setInterval(function(){connection.query("show tables")}, 2000);
+	}
       });
-      connection.on("error", function(err) {
-        if (err.code == "PROTOCOL_CONNECTION_LOST") {
-          handle();
-        }
-      });
-      global.con = connection;
-    }
-    handle();
-    next();
+}
+handle();
+next();
   });
-
+      
 // Adding routes to the express app
 app.use('/api', api);
 app.use('/users', user);
 
 // Setting index route
 app.get('/', (req,res) => res.render('index'));
+
+// report page
+app.get('/report', (req, res) => res.render('report'));
 
 // Error handing
 app.get('*', function(req, res, next) {
@@ -71,6 +72,6 @@ app.use(function(err, req, res, next) {
     res.send('Error something went wrong');
 });
 
-app.listen(port, () => {
+app.listen(port,"localhost", () => {
      console.log(`Started Node Server on port ${port}`);
 });

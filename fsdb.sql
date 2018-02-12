@@ -44,13 +44,13 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`) VALUES
 (1,	'admin',	'password123'),
-(2,	'user1',	'alpha@incridea'),
-(3,	'user2',	'bravo@incridea'),
-(4,	'user3',	'echo@incridea'),
-(5,	'user4',	'tango@incridea'),
-(6,	'user5',	'tour@incridea'),
-(7,	'user6',	'walk@incridea'),
-(8,	'user7',	'fashion@incridea'),
-(9,	'user8',	'delta@incridea');
+(2,	'nittearch11',	'alpha@incridea'),
+(3,	'mcops12',	'bravo@incridea'),
+(4,	'burnice13',	'echo@incridea'),
+(5,	'glam14',	'tango@incridea'),
+(6,	'smvit15',	'tour@incridea'),
+(7,	'joseph16',	'walk@incridea'),
+(8,	'fashion',	'fashion@incridea'),
+(9,	'incridea',	'delta@incridea');
 
 -- 2018-02-09 20:59:08

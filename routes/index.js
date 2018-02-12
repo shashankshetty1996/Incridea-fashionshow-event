@@ -18,6 +18,7 @@ router.post('/details', verifyToken, (req, res) => {
             if(err) {
                 res.sendStatus(403);
             }
+	    console.log(err, result);
             let id = result.insertId;
             // making 2 digit number
             let code = ("0" + String(id)).slice(-2); 
